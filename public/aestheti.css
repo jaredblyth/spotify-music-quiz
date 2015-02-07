@@ -1,0 +1,103 @@
+body {
+    width: 60em;
+    margin: 0 auto;
+}
+
+
+
+.album {
+    filter: url(blur.svg#blur);
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    filter: blur(10px);
+    -webkit-transition: filter 0.25s;
+    -moz-transition: filter 0.25s;
+    transition: filter 0.25s;
+    max-width: 25%;
+}
+
+.numbered-list {
+    list-style-type: lower-alpha;
+}
+
+.answer {
+    transition: transform 0.25s ease-in-out;
+}
+
+.answer:not(input):hover {
+    cursor: pointer;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+audio {
+    display: block;
+}
+
+input {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+/**
+ * (C)Leanest CSS spinner ever
+ */
+
+@keyframes spin {
+	to { transform: rotate(1turn); }
+}
+
+.progress {
+	position: relative;
+	display: inline-block;
+	width: 5em;
+	height: 5em;
+	margin: 0 .5em;
+	font-size: 12px;
+	text-indent: 999em;
+	overflow: hidden;
+	animation: spin 1s infinite steps(8);
+}
+
+.small.progress {
+	font-size: 6px;
+}
+
+.large.progress {
+	font-size: 24px;
+}
+
+.progress:before,
+.progress:after,
+.progress > div:before,
+.progress > div:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 2.25em; /* (container width - part width)/2  */
+	width: .5em;
+	height: 1.5em;
+	border-radius: .2em;
+	background: #eee;
+	box-shadow: 0 3.5em #eee; /* container height - part height */
+	transform-origin: 50% 2.5em; /* container height / 2 */
+}
+
+.progress:before {
+	background: #555;
+}
+
+.progress:after {
+	transform: rotate(-45deg);
+	background: #777;
+}
+
+.progress > div:before {
+	transform: rotate(-90deg);
+	background: #999;
+}
+
+.progress > div:after {
+	transform: rotate(-135deg);
+	background: #bbb;
+}
